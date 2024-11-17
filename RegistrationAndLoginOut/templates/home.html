@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECE Club - Home</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8; /* light gray for background */
+      color: #333; /* dark gray for text */
+    }
+    header {
+      background-color: #A51C30; /* Harvard Crimson */
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    nav {
+      margin: 20px 0;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #A51C30; /* Harvard Crimson for links */
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .logout-button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 10px auto;
+      background-color: #A51C30; /* Harvard Crimson for button */
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .logout-button:hover {
+      background-color: #8E1725; /* Darker crimson on hover */
+    }
+    .container {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
+    }
+    .container h2 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+    .container p {
+      font-size: 1.2rem;
+      color: #555; /* medium gray for paragraph text */
+    }
+    footer {
+      margin-top: 50px;
+      background-color: #333; /* dark gray footer */
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to the ECE Club</h1>
+  </header>
+
+  <nav>
+    <a href="#">About Us</a>
+    <a href="#">Events</a>
+    <a href="#">Projects</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <div class="container">
+    <h2>Explore. Create. Excel.</h2>
+    <p>The ECE Club is your platform to innovate, collaborate, and achieve. Join us for workshops, projects, and events that inspire creativity and technical excellence!</p>
+    
+    <!-- Logout Button -->
+    <form action="{% url 'registerlogin' %}" method="POST" style="margin-top: 20px;">
+      {% csrf_token %}
+      <button class="logout-button" type="submit">Log Out</button>
+    </form>
+  </div>
+</body>
+</html>

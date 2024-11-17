@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Blogs of ECE Tarc</h1><br>
+    {% for feature in features %}
+    <h1>{{feature.name}}</h1>
+    <p>{{feature.details}}</p>
+    {% if feature.name == 'Dudun' %}
+    <p>Yes this is our bubun but we call him dudun</p>
+    {% endif %}
+    {% endfor %}
+</body>
+</html>

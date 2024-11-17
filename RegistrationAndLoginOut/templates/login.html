@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f8f8f8; /* Light gray background */
+    }
+    .login-form {
+      width: 100%;
+      max-width: 400px;
+      padding: 30px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .login-form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #A51C30; /* Harvard Crimson */
+      font-size: 1.8rem;
+    }
+    .login-form h3 {
+      text-align: center;
+      color: green;
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+    .login-form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #555;
+      font-size: 0.9rem;
+    }
+    .login-form input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 0.9rem;
+    }
+    .login-form button {
+      width: 100%;
+      padding: 12px;
+      background-color: #A51C30; /* Harvard Crimson */
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .login-form button:hover {
+      background-color: #8E1725; /* Darker Crimson */
+    }
+    .login-form .register-link {
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+      color: #A51C30; /* Harvard Crimson */
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .login-form .register-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-form">
+    <h2>Login</h2>
+    {% for message in messages %}
+    <h3>{{ message }}</h3>
+    {% endfor %}
+    <form action="{% url 'login' %}" method="POST">
+      {% csrf_token %}
+      <label for="username">Username</label>
+      <input type="text" name="username" placeholder="Enter your username" required>
+      
+      <label for="password">Password</label>
+      <input type="password" name="password" placeholder="Enter your password" required>
+      
+      <button type="submit">Log In</button>
+      <a href="register" class="register-link">Don't have an account? Register</a>
+    </form>
+  </div>
+</body>
+</html>
