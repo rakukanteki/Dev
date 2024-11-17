@@ -1,9 +1,0 @@
-{% comment %} We want to coout the number of words. {% endcomment %}
-<h2>Input your text below</h2>
-<form action="#" method= "POST">
-    {% csrf_token %}
-    <textarea name="text" rows='25', cols='100'></textarea><br>
-    <input type="submit"/> 
-</form>
-<hr>
-Total Words Counted: {{total_words}}
